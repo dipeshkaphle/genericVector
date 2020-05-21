@@ -13,7 +13,7 @@
             }
             `
 * `vector *vec=initAndReserve(int sizeof_data,int (*cmp)(const void *,const void *),unsigned int capacity)` is another way to initialize a vector.
-    * This way the vector will be preallocated storage for storing data and will save some time in resizing. This is recommended if you know howbig you want your vector to be. All the indexes will be initialized to `0` as well but size will still be `0` so you can do `push_back opertation as well as the `set` operation
+    * This way the vector will be preallocated storage for storing data and will save some time in resizing. This is recommended if you know how big you want your vector to be. All the memory will be initialized to `0` but size will still be `0` so you can do `push_back` operation as well as the `set` operation
 
 
 ## <u>Other Functions:</u>
