@@ -140,6 +140,47 @@ void shrinkToFit(vector *vec)
 }
 
 
+//Insert an element at arbitrary position
+void insert(vector *vec, void *elemAddr,unsigned int position)
+{
+		unsigned int len=sizeof(vec);
+		if(len==position){
+			push_back(vec,elemAddr);
+			return;
+		}
+		else{
+				int arr[len-position];
+				unsigned int lentmp=len-position;
+				memcpy(arr,(char *)(vec->arr)+position*vec->word_size,lentmp*(vec->word_size));
+				set(vec,elemAddr,position);
+				for(unsigned int i=0;i<(lentmp-1);++i)
+						set(vec,(void *)(arr+i),position+i+1);
+				push_back(vec,(void *)(arr+lentmp-1));
+				return;
+		}
+		
+}
+
+//Delete an element from an arbitrary position
+void removeAt(vector *vec,unsigned int position)
+{
+
+		int len=sizeof(vec);
+		int tmpLen=len-position-1;
+		if(position==len-1){
+				pop_back(vec);
+		}
+		else{
+				void *dest=(void *)((char *)vec->arr+position*vec->word_size);
+				void *src=(void *)((char  *)dest+vec->word_size);
+				memcpy(dest,src,tmpLen*vec->word_size);
+				(vec->size)--;
+		}
+}
+
+
+
+
 //uses the built in qsort to sort the generic vector
 void sort(vector *vec)
 {
