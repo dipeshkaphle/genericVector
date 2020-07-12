@@ -45,3 +45,5 @@
 
 * `shrinkToFit(vector *vec)` will resize the vector  so that `capacity=size`
 * `sort(vector *vec)` will sort the vector using built in `qsort` of C
+* `removeAt(vector *vec,unsigned int pos)` removes the element at index `pos`. Might result in segmentation fault when used incorrectly like trying to delete element at index not within vector length.
+* `insert(vector *vec,void *elementToAddAddress,unsigned int pos)` will insert the element at address `elementToAddAddress` at position `pos`. Does no error handling. Upto the user to get it right. Might result in segmentation faults if used incorrectly.
