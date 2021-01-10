@@ -1,16 +1,4 @@
-#ifndef GENERICVECTOR_H
-#define GENERICVECTOR_H
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-struct vector {
-  void *arr;
-  unsigned int word_size;
-  unsigned int size;
-  unsigned int capacity;
-  int (*cmp)(const void *, const void *);
-};
-typedef struct vector vector;
+#include "genericVector.h"
 
 // returns the number of elements in the vector
 unsigned int size(vector *vec) { return vec->size; }
@@ -151,5 +139,3 @@ void printAll(vector *vec, void (*printFunc)(const void *),
 
 // uses the built in qsort to sort the generic vector
 void sort(vector *vec) { qsort(vec->arr, size(vec), vec->word_size, vec->cmp); }
-
-#endif // GENERICVECTOR_H
