@@ -1,12 +1,13 @@
 #include "genericVector.h"
+#include "src/genericVector.h"
 #include <stdio.h>
 
 void printInt(const void *val) { printf("%d ", *(int *)val); }
 
 int cmp(const void *a, const void *b) { return *(int *)a - *(int *)b; }
-int main()
-{
-  vector *vec = Vector(sizeof(int), cmp);
+
+int main() {
+  vector *vec = make_vector(sizeof(int), cmp);
   for (int i = 5; i >= 1; i--)
     push_back(vec, (void *)&i);
   sort(vec);

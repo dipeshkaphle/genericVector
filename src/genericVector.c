@@ -41,8 +41,8 @@ void pop_back(vector *vec) {
 }
 
 // Vector initializer
-vector *Vector(unsigned int word_size,
-               int (*compare)(const void *, const void *)) {
+vector *make_vector(unsigned int word_size,
+                    int (*compare)(const void *, const void *)) {
   vector *vec = (vector *)calloc(1, sizeof(vector));
   vec->cmp = compare;
   vec->word_size = word_size;

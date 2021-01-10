@@ -30,8 +30,8 @@ void push_back(vector *vec, void *data);
 void pop_back(vector *vec);
 
 // Vector initializer
-vector *Vector(unsigned int word_size,
-               int (*compare)(const void *, const void *));
+vector *make_vector(unsigned int word_size,
+                    int (*compare)(const void *, const void *));
 
 // Reserves the needed amount of memory and returns a heap allocated vector
 vector *initAndReserve(unsigned int word_size,
