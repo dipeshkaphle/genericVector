@@ -56,14 +56,14 @@ vector *make_vector(unsigned int word_size,
 vector *initAndReserve(unsigned int word_size,
                        int (*compare)(const void *, const void *),
                        unsigned int capacity) {
-  vector *vec = Vector(word_size, compare);
+  vector *vec = make_vector(word_size, compare);
   vec->arr = calloc(capacity, word_size);
   vec->capacity = capacity;
   return vec;
 }
 
 // deletes the heap allocated memory
-void delete (vector *vec) {
+void delete_vec(vector *vec) {
   if (vec->arr != NULL) {
     free(vec->arr);
     vec->arr = NULL;

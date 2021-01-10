@@ -39,7 +39,7 @@ vector *initAndReserve(unsigned int word_size,
                        unsigned int capacity);
 
 // deletes the heap allocated memory
-void delete (vector *vec);
+void delete_vec(vector *vec);
 
 void *get(vector *vec, unsigned int index);
 
